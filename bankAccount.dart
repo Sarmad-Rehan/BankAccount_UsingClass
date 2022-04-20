@@ -7,21 +7,55 @@ class BankAccount {
   double _balance;
 
   BankAccount(
-      this._name, this._accountNumber, this._accountType, this._balance);
+      [this._name = "",
+      this._accountNumber = 0,
+      this._accountType = "",
+      this._balance = 0.0]);
 
-  void depositor(double _balance) {
+  void set name(String _name) {
+    this._name = _name;
+  }
+
+  String get name {
+    return this._name;
+  }
+
+  void set accountNum(int _accountNumber) {
+    this._accountNumber = _accountNumber;
+  }
+
+  int get accountNum {
+    return this._accountNumber;
+  }
+
+  void set accountType(String _accountType) {
+    this._accountType = _accountType;
+  }
+
+  String get accountType {
+    return this._accountType;
+  }
+
+  void set balance(double _balance) {
+    this._balance = _balance;
+  }
+
+  double get balance {
+    return this._balance;
+  }
+
+  void deposit(double _balance) {
     this._balance = this._balance + _balance;
   }
 
-  void withDraw() {
+  void withDraw(double _amount) {
     stdout.write("Enter Amount you want to debit: ");
-
-    if (double.tryParse(stdin.readLineSync()!)! > _balance) {
-      print("Low Balance: $_balance");
-    } else {
-      _balance = _balance - double.tryParse(amount)!;
+    if (double.tryParse(stdin.readLineSync()!)! < _balance) {
+      _balance = _balance - _amount;
       print(
           "Your Amount has been debited from your account \nYour Remaining Balance: $_balance");
+    } else {
+      print("Low Balance: $_balance");
     }
   }
 
