@@ -20,7 +20,7 @@ class BankAccount {
     return this._name;
   }
 
-  void set accountNum(int _accountNumber) {
+  void set accountNumber(int _accountNumber) {
     this._accountNumber = _accountNumber;
   }
 

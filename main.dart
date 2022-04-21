@@ -24,7 +24,7 @@ void menu() {
         stdout.write("Enter Account Type: ");
         bankAccount.accountType = stdin.readLineSync()!;
         stdout.write("Enter Account Number: ");
-        bankAccount.accountNum = int.parse(stdin.readLineSync()!);
+        bankAccount.accountNumber = int.parse(stdin.readLineSync()!);
         stdout.write("Enter Balance: ");
         bankAccount.balance = double.parse(stdin.readLineSync()!);
 
